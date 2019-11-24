@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="featureColor">@color/qbBlue</color>
+    <color name="featurePressedColor">@color/qbBlueDark</color>
+    <color name="featureTitleColor">#939597</color>
+    <color name="actionBarColor">@color/qbBlue</color>
+    <color name="actionBarColorDark">@color/qbBlueDark</color>
+    <color name="qbBackground">@color/lightGray</color>
+    <color name="backgroundColor">@color/qbLightGray</color>
+    <color name="orange">@color/qbFall</color>
+    <color name="dark_orange">#FFC96B1A</color>
+    <color name="light_orange">#EFB5A0</color>
+    <color name="headerBackgroundColor">@color/qbBlue</color>
+    <color name="headerBackgroundColorDark">@color/qbBlueDark</color>
+    <color name="headerTextColor">@color/white</color>
+    <color name="actionBarMenuTextColor">@color/white</color>
+
+    <color name="verticalTitleColor">@color/qbMediumGray</color>
+
+    <!--
+    Qb logo on splash screen.
+    When using light/dark top background, consider changing status bar to light/dark
+    in styles-v23.
+-->
+    <color name="colorQbLogo">@color/qbBlue</color>
+    <color name="colorQbLogoText">@color/black</color>
+    <color name="colorQbLogoBottom">@color/white</color>
+    <color name="colorQbLogoTop">@color/qbLightGray</color>
+
+    <!-- Qb colors -->
+    <color name="qbBlue">#FF00A9CE</color>
+    <color name="qbBlueDark">#FF0090B0</color>
+    <color name="qbSky">#FF6AD1E3</color>
+    <color name="qbBlueslate">#FF0033A0</color>
+    <color name="qbLake">#FF0077C8</color>
+    <color name="qbLightGray">#FFD9E1E2</color>
+    <color name="qbMediumGray">#FF768692</color>
+    <color name="qbDarkGray">#FF333F48</color>
+    <color name="qbGrass">#FFD0DF00</color>
+    <color name="qbSun">#FFFFCD00</color>
+    <color name="qbRed">#FFEE2F4E</color>
+    <color name="qbFall">#FFF58220</color>
+
+    <!-- Common -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="lightGray">#FFF5F5F5</color>
+</resources>
