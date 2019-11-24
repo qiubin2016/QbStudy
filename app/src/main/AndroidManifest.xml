@@ -37,8 +37,8 @@
         <!-- Remember to add your plug-in Activities to the Android Manifest file. -->
         <activity
             android:name="com.qb.toolbox.demo01.Demo01Activity"
-            android:icon="@drawable/ic_hts_feature"
-            android:label="@string/hts_feature_title">
+            android:icon="@drawable/ic_cfg_feature"
+            android:label="@string/cfg_feature_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
