@@ -29,14 +29,11 @@ public class SplashscreenActivity extends AppCompatActivity {
 //            finish();
 //        }, DELAY);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                final Intent newIntent = new Intent(SplashscreenActivity.this, FeaturesActivity.class);
-                newIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(newIntent);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            final Intent newIntent = new Intent(SplashscreenActivity.this, FeaturesActivity.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            SplashscreenActivity.this.startActivity(newIntent);
+            SplashscreenActivity.this.finish();
         }, DELAY);
     }
 
