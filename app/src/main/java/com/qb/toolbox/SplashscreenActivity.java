@@ -21,14 +21,6 @@ public class SplashscreenActivity extends AppCompatActivity {
 
         // Jump to SensorsActivity after DELAY milliseconds
         //activity SplashscreenActivity---->FeaturesActivity
-//        new Handler().postDelayed(() -> {
-//            final Intent newIntent = new Intent(SplashscreenActivity.this, FeaturesActivity.class);
-//            newIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-//
-//            startActivity(newIntent);
-//            finish();
-//        }, DELAY);
-
         new Handler().postDelayed(() -> {
             final Intent newIntent = new Intent(SplashscreenActivity.this, FeaturesActivity.class);
             newIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
