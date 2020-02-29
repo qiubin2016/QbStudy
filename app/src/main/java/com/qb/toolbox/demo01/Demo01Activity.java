@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.qb.toolbox.R;
 
@@ -12,13 +14,44 @@ import java.io.FileReader;
 import java.io.LineNumberReader;
 
 public class Demo01Activity extends AppCompatActivity {
-    private static final String TAG = "Demo01Activity";
+    private static final String TAG = Demo01Activity.class.getSimpleName();
+
+    private Button mButton;
+
+    private BeepManager beepManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo01);
 
+        InitView();
+        InitVariable();
 //        GetTtyUsbPath();
+    }
+
+    private void InitView() {
+        mButton = findViewById(R.id.button1);
+        mButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "button1 OnClick, enter");
+                beepManager.playBeepSoundAndVibrate();
+                Log.i(TAG, "button1 OnClick, leave");
+            }
+        });
+    }
+
+    private void InitVariable() {
+        beepManager = new BeepManager(this);
+        beepManager.update();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        beepManager.close();
     }
 
     public String GetTtyUsbPath(){
