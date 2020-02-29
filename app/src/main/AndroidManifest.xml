@@ -17,26 +17,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name="com.qb.toolbox.FeaturesActivity"
+        <activity
+            android:name=".FeaturesActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme.TranslucentStatusBar">
-
-        </activity>
-
-        <activity android:name="com.qb.toolbox.SplashscreenActivity">
+            android:theme="@style/AppTheme.TranslucentStatusBar"></activity>
+        <activity android:name=".SplashscreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Template plugin activities -->
+        </activity> <!-- Template plugin activities -->
         <!-- Remember to add your plug-in Activities to the Android Manifest file. -->
         <activity
-            android:name="com.qb.toolbox.demo01.Demo01Activity"
+            android:name=".demo01.Demo01Activity"
+            android:icon="@drawable/ic_demo01_feature"
+            android:label="@string/demo01_feature_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.qb.toolbox.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".camera01_01.Camera01_01Activity"
             android:icon="@drawable/ic_cfg_feature"
             android:label="@string/cfg_feature_title">
             <intent-filter>
@@ -45,6 +51,8 @@
                 <category android:name="com.qb.toolbox.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
 
     </application>
 

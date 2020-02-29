@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="cfg_feature_title">CFG</string>
+    <string name="demo01_feature_title">Demo01</string>
+    <string name="camera01_01_feature_title">Camera01_01</string>
 </resources>
