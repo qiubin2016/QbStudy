@@ -79,4 +79,9 @@
     <string name="app_category">com.qb.toolbox.LAUNCHER</string>
     <string name="app_utils_category">com.qb.toolbox.UTILS</string>
 
+    <!--module: camera_param-->
+    <string name="picture">Picture</string>
+    <string name="description_info">Info</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
 </resources>

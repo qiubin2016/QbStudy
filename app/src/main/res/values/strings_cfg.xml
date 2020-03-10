@@ -3,4 +3,5 @@
     <string name="cfg_feature_title">CFG</string>
     <string name="demo01_feature_title">Demo01</string>
     <string name="camera01_01_feature_title">Camera01_01</string>
+    <string name="camera_param_feature_title">CameraParam</string>
 </resources>

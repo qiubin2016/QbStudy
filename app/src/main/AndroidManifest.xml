@@ -18,11 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".FeaturesActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme.TranslucentStatusBar"></activity>
+            android:theme="@style/AppTheme.TranslucentStatusBar" />
         <activity android:name=".SplashscreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +32,16 @@
             </intent-filter>
         </activity> <!-- Template plugin activities -->
         <!-- Remember to add your plug-in Activities to the Android Manifest file. -->
+        <activity
+            android:name=".camera01_01.Camera01_01Activity"
+            android:icon="@drawable/ic_cfg_feature"
+            android:label="@string/camera01_01_feature_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.qb.toolbox.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".demo01.Demo01Activity"
             android:icon="@drawable/ic_demo01_feature"
@@ -41,20 +52,16 @@
                 <category android:name="com.qb.toolbox.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".camera01_01.Camera01_01Activity"
-            android:icon="@drawable/ic_cfg_feature"
-            android:label="@string/cfg_feature_title">
+        <activity android:name=".camera_param.CameraParamActivity"
+            android:icon="@drawable/ic_demo01_feature"
+            android:label="@string/camera_param_feature_title"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="com.qb.toolbox.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
     </application>
 
 </manifest>

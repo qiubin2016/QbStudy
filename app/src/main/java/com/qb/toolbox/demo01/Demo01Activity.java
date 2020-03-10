@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.qb.toolbox.R;
 
 import java.io.File;
@@ -16,9 +17,11 @@ import java.io.LineNumberReader;
 public class Demo01Activity extends AppCompatActivity {
     private static final String TAG = Demo01Activity.class.getSimpleName();
 
-    private Button mButton;
+    private Button mButton1;
+    private Button mButton2;
 
     private BeepManager beepManager;
+    private View mLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +31,33 @@ public class Demo01Activity extends AppCompatActivity {
         InitView();
         InitVariable();
 //        GetTtyUsbPath();
+        Snackbar.make(mLayout, "Snackbar test ......",
+                Snackbar.LENGTH_SHORT)
+                .show();
     }
 
     private void InitView() {
-        mButton = findViewById(R.id.button1);
-        mButton.setOnClickListener(new View.OnClickListener() {
+        mButton1 = findViewById(R.id.button1);
+        mButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "button1 OnClick, enter");
                 beepManager.playBeepSoundAndVibrate();
                 Log.i(TAG, "button1 OnClick, leave");
+            }
+        });
+
+        mLayout = findViewById(R.id.linearLayout);
+        mButton2 = findViewById(R.id.button2);
+        mButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "button2 OnClick, enter");
+                //Snackbar用法
+                Snackbar.make(mLayout, "Snackbar test ......",
+                        Snackbar.LENGTH_SHORT)
+                        .show();
+                Log.i(TAG, "button2 OnClick, leave");
             }
         });
     }
