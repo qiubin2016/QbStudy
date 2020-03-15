@@ -161,10 +161,7 @@ public class NoteActivity extends Activity {
     AdapterView.OnItemClickListener queryClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Note note = notesAdapter.getItem(position);
-            notesBox.remove(note);
-            Log.d(ObjectBoxApp.TAG, "Deleted note, ID: " + note.getId());
-            updateNotes();
+            Log.d(ObjectBoxApp.TAG, "do nothing");
         }
     };
 }
