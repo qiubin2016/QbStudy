@@ -26,6 +26,20 @@
             android:id="@+id/button2"
             android:text="Snackbar"
             android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3"
+            android:text="JsonTest"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button4"
+            android:text="ObjectBox Test"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 

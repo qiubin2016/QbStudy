@@ -2,6 +2,7 @@ package com.qb.toolbox.demo01;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,19 +10,31 @@ import android.widget.Button;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.qb.toolbox.R;
+import com.qb.toolbox.demo01.objectBox.Note;
+import com.qb.toolbox.demo01.objectBox.NoteActivity;
+import com.qb.toolbox.demo01.objectBox.ObjectBox;
+
+//import org.json.JSONObject;
+//import com.alibaba.fastjson.JSONObject;
 
 import java.io.File;
 import java.io.FileReader;
 import java.io.LineNumberReader;
+
+import io.objectbox.Box;
 
 public class Demo01Activity extends AppCompatActivity {
     private static final String TAG = Demo01Activity.class.getSimpleName();
 
     private Button mButton1;
     private Button mButton2;
+    private Button mButton3;
+    private Button mButton4;
 
     private BeepManager beepManager;
     private View mLayout;
+
+    private Box<Note> userBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +47,8 @@ public class Demo01Activity extends AppCompatActivity {
         Snackbar.make(mLayout, "Snackbar test ......",
                 Snackbar.LENGTH_SHORT)
                 .show();
+
+        userBox = ObjectBox.get().boxFor(Note.class);
     }
 
     private void InitView() {
@@ -58,6 +73,23 @@ public class Demo01Activity extends AppCompatActivity {
                         Snackbar.LENGTH_SHORT)
                         .show();
                 Log.i(TAG, "button2 OnClick, leave");
+            }
+        });
+
+        mButton3 = findViewById(R.id.button3);
+        mButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        mButton4 = findViewById(R.id.button4);
+        mButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "this:" + this);
+                startActivity(new Intent(Demo01Activity.this, NoteActivity.class));
             }
         });
     }
@@ -123,5 +155,24 @@ public class Demo01Activity extends AppCompatActivity {
             }
         }
         return null;
+    }
+
+    public class DeviceInfoData  {
+        public String password = null;
+        public String username = null;
+        public String clientId = null;
+
+        @Override
+        public String toString() {
+//            return JSONObject.toJSONString(this);
+//            JSONObject
+            return "";
+        }
+    }
+
+    public void removeUser(Note note) {
+        userBox.remove(note);
+
+//        updateUsers();
     }
 }
