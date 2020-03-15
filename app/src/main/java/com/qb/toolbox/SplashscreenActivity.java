@@ -12,7 +12,7 @@ import com.qb.toolbox.R;
 public class SplashscreenActivity extends AppCompatActivity {
     private static final String TAG = "SplashscreenActivity";
     /** Splash screen duration time in milliseconds */
-    private static final int DELAY = 500;
+    private static final int DELAY = 300;  //启动界面停留300ms
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {

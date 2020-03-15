@@ -7,8 +7,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="io.objectbox.example.NoteActivity"
-    tools:ignore="RtlHardcoded">
+    tools:context="com.qb.toolbox.demo01.objectBox.NoteActivity"
+    tools:ignore="RtlHardcoded"
+
+    >
 
     <Button
         android:id="@+id/buttonAdd"
@@ -37,8 +39,6 @@
         android:inputType="numberDecimal"
         />
 
-
-
     <TextView
         android:id="@+id/textViewNoteInstructions"
         android:layout_width="match_parent"
@@ -51,13 +51,38 @@
         android:text="@string/click_to_remove"
         android:textSize="12sp"/>
 
-    <ListView
-        android:id="@+id/listViewNotes"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/textViewNoteInstructions"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="4dp"
-        android:scrollbars="vertical"/>
+        android:orientation="vertical">
+        <ListView
+            android:id="@+id/listViewNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_below="@+id/textViewNoteInstructions"
+            android:scrollbars="vertical"
+            />
+
+        <Button
+            android:id="@+id/buttonQuery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onQueryButtonClick"
+            android:text="@string/query"/>
+
+        <ListView
+            android:id="@+id/listViewQuery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_below="@+id/buttonQuery"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="4dp"
+            android:scrollbars="vertical"
+            />
+    </LinearLayout>
+
 
 </RelativeLayout>

@@ -16,6 +16,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -34,11 +35,14 @@ public class NoteActivity extends Activity {
 
     public static final String TAG = NoteActivity.class.getSimpleName();
     private EditText editText;
+    private EditText editTextId;
     private View addNoteButton;
+    private Button queryButton;
 
     private Box<Note> notesBox;
     private Query<Note> notesQuery;
     private NotesAdapter notesAdapter;
+    private NotesAdapter queryAdapter;
 
     @Override
 
@@ -67,8 +71,16 @@ public class NoteActivity extends Activity {
         notesAdapter = new NotesAdapter();
         listView.setAdapter(notesAdapter);
 
+        ListView listViewQuery = findViewById(R.id.listViewQuery);
+        listViewQuery.setOnItemClickListener(queryClickListener);
+
+        queryAdapter = new NotesAdapter();
+        listViewQuery.setAdapter(queryAdapter);
+
         addNoteButton = findViewById(R.id.buttonAdd);
         addNoteButton.setEnabled(false);
+
+        queryButton = findViewById(R.id.buttonQuery);
 
         editText = findViewById(R.id.editTextNote);
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -98,10 +110,25 @@ public class NoteActivity extends Activity {
 
             }
         });
+
+        editTextId = findViewById(R.id.id);
     }
 
     public void onAddButtonClick(View view) {
         addNote();
+    }
+
+    public void onQueryButtonClick(View view) {
+        long id = 0;
+        String idText = editTextId.getText().toString();
+        try {
+            id = Integer.parseInt(idText);
+        } catch (Exception e) {
+            Log.e(TAG, "Exception");
+            e.printStackTrace();
+        }
+        List<Note> notes = notesBox.query().equal(Note_.id, id).order(Note_.text).build().find();  //查询
+        queryAdapter.setNotes(notes);
     }
 
     private void addNote() {
@@ -122,6 +149,16 @@ public class NoteActivity extends Activity {
     }
 
     AdapterView.OnItemClickListener noteClickListener = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Note note = notesAdapter.getItem(position);
+            notesBox.remove(note);
+            Log.d(ObjectBoxApp.TAG, "Deleted note, ID: " + note.getId());
+            updateNotes();
+        }
+    };
+
+    AdapterView.OnItemClickListener queryClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Note note = notesAdapter.getItem(position);
